@@ -1,4 +1,5 @@
 
+import 'package:flutter/foundation.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class VoiceSearchService {
@@ -13,14 +14,14 @@ class VoiceSearchService {
 
   Future<void> init() async {
     bool available = await _speech.initialize(
-      onStatus: (val) => print('onStatus: $val'),
-      onError: (val) => print('onError: $val'),
+      onStatus: (val) => debugPrint('onStatus: $val'),
+      onError: (val) => debugPrint('onError: $val'),
     );
     if (available) {
       var locales = await _speech.locales();
-      print(locales);
+      debugPrint(locales.toString());
     } else {
-      print("The user has denied the use of speech recognition.");
+      debugPrint("The user has denied the use of speech recognition.");
     }
   }
 
@@ -29,10 +30,8 @@ class VoiceSearchService {
       _speech.listen(
         onResult: (val) {
           _lastWords = val.recognizedWords;
-          if (onResult != null) {
-            onResult(_lastWords);
-          }
-        },
+          onResult(_lastWords);
+                },
         localeId: _localeId,
       );
       _isListening = true;

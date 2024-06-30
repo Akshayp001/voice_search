@@ -22,7 +22,7 @@ class VoiceSearchWidget extends StatefulWidget {
   final VoidCallback? onListeningStopped;
 
   const VoiceSearchWidget({
-    Key? key,
+    super.key,
     this.localeCode = 'en_US',
     this.activeWidgetColor = Colors.amberAccent,
     this.inactiveWidgetColor = Colors.lightBlue,
@@ -37,7 +37,7 @@ class VoiceSearchWidget extends StatefulWidget {
     required this.onResult,
     this.onListeningStarted,
     this.onListeningStopped,
-  }) : super(key: key);
+  });
 
   @override
   State<VoiceSearchWidget> createState() => _VoiceSearchWidgetState();
