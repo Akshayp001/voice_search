@@ -1,6 +1,6 @@
 name: voice_search
-description: "A new Flutter package project."
-version: 0.0.1
+description: "A Flutter package that provides a customizable voice recognition widget for performing voice searches in multiple languages. This package supports various platforms including web, Android, iOS, macOS, Windows, and Linux."
+version: 1.0.0
 homepage:
 
 environment:
