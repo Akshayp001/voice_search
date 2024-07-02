@@ -16,7 +16,7 @@ Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  voice_search: ^0.0.1
+  voice_search: ^1.0.2
 ```
 
 ## Usage
