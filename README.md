@@ -16,7 +16,7 @@ Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  voice_search: ^0.0.1
+  voice_search: ^latest_version
 ```
 
 ## Usage
@@ -62,7 +62,8 @@ You can customize the `VoiceSearchWidget` by passing different parameters:
 
 ```dart
 VoiceSearchWidget(
-  localeCode: 'es_ES', // Set locale for voice recognition
+  //localeCode: 'es_ES', // Set locale for voice recognition
+  localeCode : Locales.ENGLISH_US, // choos locale from defined locale class
   activeWidgetColor: Colors.green, // Color when widget is active
   inactiveWidgetColor: Colors.red, // Color when widget is inactive
   activeIcon: Icons.mic, // Icon when widget is active
@@ -351,7 +352,6 @@ class MultiLanguageExample extends StatelessWidget {
 * iOS
 * macOS
 * Windows
-* Linux
 
 ## Contributing
 

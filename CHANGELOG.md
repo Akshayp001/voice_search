@@ -1,3 +1,4 @@
-## 1.0.2
+## 1.0.3
 
-* Fixed some minor bugs.
+* Added Locales codes now developers can select locale from defined locales.
+* some bug fixes

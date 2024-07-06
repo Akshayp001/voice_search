@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import '../service/voice_service.dart';
+// import 'package:audioplayers/audioplayers.dart';
 
 typedef VoiceSearchResultCallback = void Function(String result);
 
@@ -20,6 +21,8 @@ class VoiceSearchWidget extends StatefulWidget {
   final VoiceSearchResultCallback? onResult;
   final VoidCallback? onListeningStarted;
   final VoidCallback? onListeningStopped;
+  // final String? voiceSearchStartSoundPath;
+  // final String? voiceSearchStopSoundPath;
 
   const VoiceSearchWidget({
     super.key,
@@ -37,6 +40,8 @@ class VoiceSearchWidget extends StatefulWidget {
     required this.onResult,
     this.onListeningStarted,
     this.onListeningStopped,
+    // this.voiceSearchStartSoundPath,
+    // this.voiceSearchStopSoundPath,
   });
 
   @override
@@ -48,6 +53,7 @@ class _VoiceSearchWidgetState extends State<VoiceSearchWidget>
   late bool _isListening;
   late VoiceSearchService _voiceSearchService;
   late AnimationController _animationController;
+  // AudioPlayer? _audioPlayer;
   late Animation<double> _animation;
 
   @override
@@ -66,15 +72,27 @@ class _VoiceSearchWidgetState extends State<VoiceSearchWidget>
     _animation = Tween<double>(begin: widget.minRadius, end: widget.maxRadius)
         .animate(CurvedAnimation(
             parent: _animationController, curve: widget.animationCurve));
+
+    // _audioPlayer = AudioPlayer();
   }
 
   @override
   void dispose() {
     _animationController.dispose();
     super.dispose();
+    // _audioPlayer!.dispose();
   }
 
-  void _startListening() {
+  // Future<void> _playSound(String? soundPath) async {
+  //   if (soundPath != null) {
+  //     await _audioPlayer?.play(AssetSource(soundPath));
+  //   }
+  // }
+
+  void _startListening() async {
+    // if (widget.voiceSearchStartSoundPath != null) {
+    //   await _playSound(widget.voiceSearchStartSoundPath);
+    // }
     setState(() {
       _isListening = true;
     });
@@ -89,7 +107,10 @@ class _VoiceSearchWidgetState extends State<VoiceSearchWidget>
     }
   }
 
-  void _stopListening() {
+  void _stopListening() async {
+    // if (widget.voiceSearchStopSoundPath != null) {
+    //   await _playSound(widget.voiceSearchStopSoundPath);
+    // }
     setState(() {
       _isListening = false;
     });
