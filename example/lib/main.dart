@@ -24,9 +24,12 @@ class ExampleSelector extends StatelessWidget {
       body: ListView(
         children: [
           _buildExampleTile(context, 'Basic Usage', BasicUsageExample()),
-          _buildExampleTile(context, 'Customized Widget', CustomizedWidgetExample()),
-          _buildExampleTile(context, 'Searchable List', SearchableListExample()),
-          _buildExampleTile(context, 'Combined Search', CombinedSearchExample()),
+          _buildExampleTile(
+              context, 'Customized Widget', CustomizedWidgetExample()),
+          _buildExampleTile(
+              context, 'Searchable List', SearchableListExample()),
+          _buildExampleTile(
+              context, 'Combined Search', CombinedSearchExample()),
           _buildExampleTile(context, 'Multi-language', MultiLanguageExample()),
         ],
       ),
@@ -94,7 +97,15 @@ class SearchableListExample extends StatefulWidget {
 }
 
 class _SearchableListExampleState extends State<SearchableListExample> {
-  List<String> allItems = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape'];
+  List<String> allItems = [
+    'Apple',
+    'Banana',
+    'Cherry',
+    'Date',
+    'Elderberry',
+    'Fig',
+    'Grape'
+  ];
   List<String> filteredItems = [];
 
   @override
@@ -200,7 +211,8 @@ class MultiLanguageExample extends StatelessWidget {
     );
   }
 
-  Widget _buildLanguageWidget(BuildContext context, String localeCode, String language) {
+  Widget _buildLanguageWidget(
+      BuildContext context, String localeCode, String language) {
     return Column(
       children: [
         Text(language),
