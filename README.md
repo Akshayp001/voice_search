@@ -14,6 +14,10 @@ A Flutter package that provides a customizable voice recognition widget for perf
 
 Add the following dependency to your `pubspec.yaml` file:
 
+```bash
+flutter pub add voice_search
+```
+
 ```yaml
 dependencies:
   voice_search: ^latest_version
